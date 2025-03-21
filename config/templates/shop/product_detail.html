@@ -2,12 +2,11 @@
 
 {% load static %}
 
-{% block title %}Каталог продуктов{% endblock title %}
+{% block title %}{{ product.name }}{% endblock title %}
 
 {% block content %}
 
 <div style="width: 800px; margin: 0 auto; display: flex;">
-  {% for product in products %}
     <div class="card" style="margin-right: 10px;">
       <img src="{{ product.image.url }}" class="card-img-top" alt="...">
       <div class="card-body">
@@ -16,7 +15,6 @@
         <a href="{% url "shop:product_detail" product_id=product.id %}" class="btn btn-primary">Подробнее</a>
       </div>
     </div>
-  {% endfor %}
 </div>
 
 {% endblock content %}
